@@ -1,4 +1,6 @@
 require_relative "constants"
+require_relative "base_tax"
+require_relative "import_tax"
 
 class TaxCalculator
   @@tax_rules = [BaseTax, ImportTax]
