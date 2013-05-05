@@ -20,7 +20,7 @@ cart.items().each do |item|
   item.tax=TaxCalculator.calculate_taxes(item)
   total_price += TaxCalculator.calculate_price(item)
   total_tax += TaxCalculator.calculate_taxes(item)
-  puts "#{item.quantity()} #{item.name()}: #{(item.price() + item.tax()).round(2)}"
+  puts item
 end
 puts "Sales Taxes: #{total_tax.round(2)}"
 puts "Total: #{(total_price + total_tax).round(2)}"

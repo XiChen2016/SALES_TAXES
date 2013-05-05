@@ -15,4 +15,8 @@ class Item
   def tax_exempt?
     Constants::EXEMPTION_ITEMS.any? { |name| @name =~ /#{name}/ }
   end
+
+  def to_s
+    "#{quantity} #{name}: #{(price + tax).round(2)}"
+  end
 end
