@@ -15,15 +15,11 @@ class TaxCalculator
 
   def self.tax_for(item)
     taxes = applicable_taxes(item).map { |at| at.tax_for item }
-    result = 0
-    taxes.each do |t|
-      result += t
-    end
-    result
+    taxes.inject { |sum, n| sum + n }
   end
 
   def self.total_tax(item)
-    (item.quantity() * tax_for(item))
+    item.quantity * tax_for(item)
   end
 
   def self.calculate_taxes(item)
@@ -32,6 +28,6 @@ class TaxCalculator
   end
 
   def self.calculate_price(item)
-    item.quantity() * item.price()
+    item.quantity * item.price
   end
 end

@@ -17,7 +17,7 @@ while !ARGF.eof
 end
 
 cart.items().each do |item|
-  item.tax=TaxCalculator.calculate_taxes(item)
+  item.tax = TaxCalculator.calculate_taxes(item)
   total_price += TaxCalculator.calculate_price(item)
   total_tax += TaxCalculator.calculate_taxes(item)
   puts item
